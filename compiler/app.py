@@ -26,7 +26,7 @@ def compile_code():
         with tempfile.NamedTemporaryFile(delete=False, suffix='.txt', mode='w') as f:
             f.write(code)
             filename = f.name
-        result = subprocess.run(['./tushi', filename], capture_output=True, text=True, timeout=10)
+        result = subprocess.run(['./maiin', filename], capture_output=True, text=True, timeout=10)
         output = result.stdout
     except Exception as e:
         output = f"Error running compiler: {e}"
